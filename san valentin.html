@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz San Valentín 🩷</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+        .card {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            width: 250px;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h1 {
+            color: #d63384;
+            font-size: 2.5em;
+        }
+        .love-message {
+            font-size: 1.5em;
+            color: #ff4081;
+            margin: 20px;
+        }
+        .heart-img {
+            width: 300px;
+            height: auto;
+            border-radius: 15px;
+            margin: 10px;
+        }
+        .btn {
+            background-color: #ff4081;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        .btn:hover {
+            background-color: #e91e63;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-10px); opacity: 0; }
+            100% { transform: translateY(100vh); opacity: 1; }
+        }
+        .heart {
+            position: fixed;
+            top: -50px;
+            color: red;
+            font-size: 25px;
+            animation: fall linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Feliz San Valentín, mi amor 🩷</h1>
+        <img src="los2.jpg" alt="Te quiero demasiado" class="heart-img">
+        <p class="love-message">Eres lo mejor que me ha pasado, cada día contigo es un regalo. Te quiero muchisimo 💕</p>
+        <img src="siempre.jpg" alt="Siempre juntos" class="heart-img">
+        <p class="love-message">Desde que llegaste a mi vida, todo tiene más sentido y felicidad.</p>
+        <img src="pico.jpg" alt="Nuestro amor por mucho tiempo" class="heart-img">
+        <p class="love-message">No hay un solo día en que no piense en cuánto deseo pasar el resto de mi vida a tu lado. 💖</p>
+        <img src="hermosa.jpg" alt="Eres las niña mas hermosa del mundo" class="heart-img">
+        <p class="love-message">Sin duda alguna eres la mujer mas hermosa y perfecta que existe.</p>
+        <br>
+        <button class="btn" onclick="mostrarSorpresa()">Haz clic para ver la sorpresa</button>
+    </div>
+    
+    <div class="card">
+        <h2>Carlos Galeano</h2>
+        <p>Para el amor de mi vida 💖</p>
+    </div>
+
+    <script>
+        function mostrarSorpresa() {
+            alert("Eres el amor de mi vida 🩷 ¡Quiero estar contigo para siempre!");
+        }
+        function crearCorazones() {
+            for (let i = 0; i < 15; i++) {
+                let heart = document.createElement("div");
+                heart.innerHTML = "🩷";
+                heart.classList.add("heart");
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.animationDuration = (Math.random() * 5 + 3) + "s";
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 8000);
+            }
+        }
+        setInterval(crearCorazones, 1000);
+    </script>
+</body>
+</html>
